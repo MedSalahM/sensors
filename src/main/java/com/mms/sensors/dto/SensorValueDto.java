@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 public class SensorValueDto {
 	
 
-	
+	private String hostname;
 	private String timestamp;
 	private String date;
 	private String time;

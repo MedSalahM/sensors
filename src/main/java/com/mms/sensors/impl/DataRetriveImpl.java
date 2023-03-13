@@ -101,6 +101,7 @@ public class DataRetriveImpl implements DataRetriveService {
 		.toList();
 		
 		        records.stream().forEach(record->{
+		        
 		        String date=record.getDate();
 	    	    String time = record.getTime();
 	    	    String timestamp=record.getTimestamp();
@@ -113,6 +114,7 @@ public class DataRetriveImpl implements DataRetriveService {
 	    	    			
 	    	    			SensorValueDto.builder()
 	    	    			.ip(receivedDataDto.getQuerx().getIp())
+	    	    			.hostname(receivedDataDto.getQuerx().getHostname())
 	    	    			.date(date)
 	    	    			.time(time)
 	    	    			.timestamp(timestamp)

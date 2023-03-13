@@ -115,11 +115,14 @@ public class AppController {
 	
 	@GetMapping("/valuef")
 	public ResponseEntity<List<SensorValueDto>> valuesf() {
+		
+		
 	
 		
 		var receviedData =  dataRetriveService.renderReceivedDataFromFile("c:\\App\\censor.cgi");
 	 
 		var r =  dataRetriveService.getDataFromReceivedJson(receviedData);
+		
 
 	    return ResponseEntity.ok(r);
 	
@@ -133,6 +136,7 @@ public class AppController {
 	
 	 
 		var r =  dataRetriveService.getAllDataFromReceivedJson();
+		
 		
 		
 
