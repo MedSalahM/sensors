@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mms.sensors.dto.EntryDto;
@@ -29,6 +30,19 @@ public class AppController {
 	private final ReadUrlService readUrlService;
     private final DataRetriveService dataRetriveService;
 
+    
+    @GetMapping("")
+	public String home() {
+	
+		
+	
+	
+	return "Connecté au api sondes";
+	
+	
+	}
+    
+    
 	
 	@GetMapping("/test")
 	public ReceivedDataDto sondes(){
@@ -145,6 +159,25 @@ public class AppController {
 	
 	}
 	
+	
+	 @GetMapping("/sensor")
+	 public ResponseEntity<List<SensorValueDto>> valuesByIp(@RequestParam String ip) {
+	
+		 
+		
+		var receviedData =  dataRetriveService.renderReceivedDataByIp(ip);
+	 
+		var r =  dataRetriveService.getDataFromReceivedJson(receviedData);
+
+	    return ResponseEntity.ok(r);
+	
+	
+	}
+	
+	 
+		
+
+	 
 	
 }
 

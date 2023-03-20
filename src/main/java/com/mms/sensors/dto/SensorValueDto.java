@@ -13,10 +13,14 @@ public class SensorValueDto {
 	
 
 	private String hostname;
-	private String timestamp;
+	//private String timestamp;
 	private String date;
-	private String time;
+	//private String time;
 	private String sensorid;
+	private String name;
+	private String unit;
+	private String uplim;
+	private String lolim;
 	private String ip;
 	private double value;
 	private int trend;

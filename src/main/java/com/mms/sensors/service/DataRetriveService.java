@@ -9,12 +9,13 @@ public interface DataRetriveService {
 
 	
 	public ReceivedDataDto renderReceivedData(String url);
-	
 	public ReceivedDataDto renderReceivedData(String ip , String url);
+	public ReceivedDataDto renderReceivedDataFromFile(String url);
+	public ReceivedDataDto renderReceivedDataByIp(String ip);
 
 	
-	public ReceivedDataDto renderReceivedDataFromFile(String url);
- 
+	
+	
 	List<SensorValueDto> getDataFromReceivedJson(ReceivedDataDto receivedDataDto);
 	List<SensorValueDto> getAllDataFromReceivedJson();
 	
