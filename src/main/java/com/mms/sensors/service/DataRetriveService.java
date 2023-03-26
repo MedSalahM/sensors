@@ -13,9 +13,6 @@ public interface DataRetriveService {
 	public ReceivedDataDto renderReceivedDataFromFile(String url);
 	public ReceivedDataDto renderReceivedDataByIp(String ip);
 
-	
-	
-	
 	List<SensorValueDto> getDataFromReceivedJson(ReceivedDataDto receivedDataDto);
 	List<SensorValueDto> getAllDataFromReceivedJson();
 	
