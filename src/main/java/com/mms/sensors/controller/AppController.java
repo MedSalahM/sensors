@@ -143,6 +143,40 @@ public class AppController {
 	
 	}
 	
+	
+	@GetMapping("/valuef2")
+	public ResponseEntity<List<SensorValueDto>> valuesf2() {
+		
+		
+	
+		
+		var receviedData =  dataRetriveService.renderReceivedDataFromFile("c:\\App\\censor2.cgi");
+	 
+		var r =  dataRetriveService.getDataFromReceivedJson(receviedData);
+		
+
+	    return ResponseEntity.ok(r);
+	
+	
+	}
+	
+	@GetMapping("/valuef3")
+	public ResponseEntity<List<SensorValueDto>> valuesf3() {
+		
+		
+	
+		
+		var receviedData =  dataRetriveService.renderReceivedDataFromFile("c:\\App\\censor3.cgi");
+	 
+		var r =  dataRetriveService.getDataFromReceivedJson(receviedData);
+		
+
+	    return ResponseEntity.ok(r);
+	
+	
+	}
+	
+	
 	@GetMapping("/value/all")
 	public ResponseEntity<List<SensorValueDto>> all() {
 	
@@ -158,6 +192,7 @@ public class AppController {
 	
 	
 	}
+	
 	
 	
 	 @GetMapping("/sensor")
